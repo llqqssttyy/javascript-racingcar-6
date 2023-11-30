@@ -16,8 +16,9 @@ class GameController {
 
   async init() {
     const carNames = await this.#inputView.getCarNames();
+    const attemptNum = await this.#inputView.getAttempNum();
 
-    this.#gameModel = new GameModel(carNames);
+    this.#gameModel = new GameModel(carNames, attemptNum);
   }
 }
 

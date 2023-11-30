@@ -6,6 +6,11 @@ class InputView {
     const carNames = await Console.readLineAsync(INPUT.getCarNames);
     return carNames;
   }
+
+  async getAttemptNum() {
+    const attemptNum = await Console.readLineAsync(INPUT.getAttemptNum);
+    return attemptNum;
+  }
 }
 
 export default InputView;

@@ -1,5 +1,6 @@
 import { ERROR } from '../../constants/messages.js';
 import throwError from '../../utils/throwError.js';
+import { isInvalidNumber } from '../validators/AttemptNumValidator.js';
 import {
   hasDuplicatedName,
   isInvalidCarNamesForm,
@@ -14,7 +15,10 @@ class GameModel {
 
   constructor(carNames, attemptNum) {
     this.#validateCars(carNames);
-    this.#initCarModels(carNames.split(','));
+    this.#carModels = carNames.split(',').map((name) => new Car(name));
+
+    this.#validateAttemptNum(attemptNum);
+    this.attemptNum = Number(attemptNum);
   }
 
   #validateCars(carNames) {
@@ -27,8 +31,12 @@ class GameModel {
     if (hasDuplicatedName(carNames)) throwError(duplicatedName);
   }
 
-  #initCarModels(carNames) {
-    this.#carModels = carNames.map((name) => new Car(name));
+  #validateAttemptNum(attempNum) {
+    const { invalidChar, invalidNumber } = ERROR;
+
+    if (isWhiteSpace(attempNum)) throwError(invalidChar);
+
+    if (isInvalidNumber(attempNum)) throwError(invalidNumber);
   }
 }
 
