@@ -8,7 +8,7 @@ class App {
   }
 
   async play() {
-    await this.#gameController.start();
+    await this.#gameController.init();
   }
 }
 
