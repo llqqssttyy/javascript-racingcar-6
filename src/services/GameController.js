@@ -1,5 +1,6 @@
 import GameModel from '../domains/models/GameModel.js';
 import InputView from '../views/InputView.js';
+import OutputView from '../views/OutputView.js';
 
 class GameController {
   #inputView;
@@ -10,6 +11,7 @@ class GameController {
 
   constructor() {
     this.#inputView = new InputView();
+    this.#outputView = new OutputView();
   }
 
   async init() {
@@ -20,10 +22,12 @@ class GameController {
   }
 
   start() {
-    this.#outputView;
+    this.#outputView.printStartGame();
 
     while (!this.#gameModel.isGameOver) {
       this.#gameModel.playRound();
+
+      this.#outputView.printCurStatus(this.#gameModel.curStatus);
     }
   }
 }

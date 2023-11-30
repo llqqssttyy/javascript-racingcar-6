@@ -5,13 +5,21 @@ export const INPUT = Object.freeze({
 });
 
 export const OUTPUT = Object.freeze({
-  startGame: '실행 결과',
+  newLine: '\n',
 
-  roundResult(cars) {
-    return cars.map(({ name, position }) => {
-      POSITION = '-';
-      return `${name} : ${POSITION.repeat(position)}\n`;
+  startGame: '\n실행 결과',
+
+  curStatus(cars) {
+    const curStatus = cars.map(({ name, position }) => {
+      const POSITION = '-';
+      return `${name} : ${POSITION.repeat(position)}`;
     });
+
+    return curStatus.join('\n');
+  },
+
+  winners(winners) {
+    return `최종 우승자 : ${winners.join(', ')}`;
   },
 });
 

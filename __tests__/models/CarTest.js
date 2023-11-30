@@ -44,7 +44,7 @@ describe('move() 테스트', () => {
       }
 
       // then
-      expect(car.info).toEqual(RESULT);
+      expect(car.status).toEqual(RESULT);
     },
   );
 });

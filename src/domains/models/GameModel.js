@@ -29,6 +29,10 @@ class GameModel {
     return this.#attemptNum === this.#curRound;
   }
 
+  get curStatus() {
+    return this.#carModels.map((carModel) => carModel.status);
+  }
+
   playRound() {
     this.#carModels.forEach((car) => {
       car.move();

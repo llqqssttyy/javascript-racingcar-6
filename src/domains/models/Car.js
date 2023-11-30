@@ -18,7 +18,7 @@ class Car {
     this.#position = 0;
   }
 
-  get info() {
+  get status() {
     return {
       name: this.#name,
       position: this.#position,
