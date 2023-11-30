@@ -30,9 +30,9 @@ class GameModel {
   }
 
   playRound() {
-    // this.#carModels.forEach((car) => {
-    //   car.move();
-    // });
+    this.#carModels.forEach((car) => {
+      car.move();
+    });
     this.#curRound++;
   }
 

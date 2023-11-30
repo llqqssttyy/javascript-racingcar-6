@@ -18,16 +18,16 @@ class Car {
     this.#position = 0;
   }
 
-  move() {
-    const randNum = MissionUtils.Random.pickNumberInRange(0, 9);
-    randNum >= MOVING_NUMBER && this.#position++;
-  }
-
   get info() {
     return {
       name: this.#name,
       position: this.#position,
     };
+  }
+
+  move() {
+    const randNum = MissionUtils.Random.pickNumberInRange(0, 9);
+    randNum >= MOVING_NUMBER && this.#position++;
   }
 
   #validator(name) {
