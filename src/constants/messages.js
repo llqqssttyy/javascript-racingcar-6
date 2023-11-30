@@ -4,6 +4,17 @@ export const INPUT = Object.freeze({
   getAttemptNum: '시도할 횟수는 몇 회인가요?\n',
 });
 
+export const OUTPUT = Object.freeze({
+  startGame: '실행 결과',
+
+  roundResult(cars) {
+    return cars.map(({ name, position }) => {
+      POSITION = '-';
+      return `${name} : ${POSITION.repeat(position)}\n`;
+    });
+  },
+});
+
 export const ERROR = Object.freeze({
   // 자동차 이름
   invalidChar: '하나 이상의 알파벳을 입력해 주세요.',

@@ -13,12 +13,27 @@ class GameModel {
 
   #attemptNum;
 
+  #curRound;
+
   constructor(carNames, attemptNum) {
     this.#validateCars(carNames);
     this.#carModels = carNames.split(',').map((name) => new Car(name));
 
     this.#validateAttemptNum(attemptNum);
-    this.attemptNum = Number(attemptNum);
+    this.#attemptNum = Number(attemptNum);
+
+    this.#curRound = 0;
+  }
+
+  get isGameOver() {
+    return this.#attemptNum === this.#curRound;
+  }
+
+  playRound() {
+    // this.#carModels.forEach((car) => {
+    //   car.move();
+    // });
+    this.#curRound++;
   }
 
   #validateCars(carNames) {

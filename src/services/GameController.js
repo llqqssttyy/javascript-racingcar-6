@@ -16,12 +16,14 @@ class GameController {
     const carNames = await this.#inputView.getCarNames();
     const attemptNum = await this.#inputView.getAttemptNum();
 
-    this.#gameModel = new GameModel(carNames, attemptNum);
+    this.#gameModel = await new GameModel(carNames, attemptNum);
   }
 
-  async start() {
+  start() {
+    this.#outputView;
+
     while (!this.#gameModel.isGameOver) {
-      console.log('hey');
+      this.#gameModel.playRound();
     }
   }
 }
