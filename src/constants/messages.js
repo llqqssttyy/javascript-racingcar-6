@@ -5,6 +5,9 @@ export const INPUT = Object.freeze({
 });
 
 export const ERROR = Object.freeze({
-  isWhitespace: '하나 이상의 알파벳을 입력해 주세요.',
+  invalidChar: '하나 이상의 알파벳을 입력해 주세요.',
   invalidNumOfChars: '유효하지 않은 글자 수입니다.',
+
+  invalidCarNamesForm: '유효하지 않은 형식입니다.',
+  duplicatedName: '이름은 중복으로 입력할 수 없습니다.',
 });

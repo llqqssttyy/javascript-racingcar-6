@@ -17,9 +17,11 @@ class Car {
   }
 
   #validator(name) {
-    if (isWhiteSpace(name)) throwError(ERROR.isWhitespace);
+    const { invalidChar, invalidNumOfChars } = ERROR;
 
-    if (isInvalidNumOfChars(name)) throwError(ERROR.invalidNumOfChars);
+    if (isWhiteSpace(name)) throwError(invalidChar);
+
+    if (isInvalidNumOfChars(name)) throwError(invalidNumOfChars);
   }
 }
 
