@@ -19,6 +19,8 @@ export const OUTPUT = Object.freeze({
   },
 
   winners(winners) {
+    if (winners.length === 0) return `최종 우승자 : 없음`;
+
     return `최종 우승자 : ${winners.join(', ')}`;
   },
 });

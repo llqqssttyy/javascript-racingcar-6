@@ -7,9 +7,15 @@ class OutputView {
   }
 
   printCurStatus(cars) {
-    Console.print(OUTPUT.curStatus(cars));
+    const { curStatus, newLine } = OUTPUT;
 
-    Console.print(OUTPUT.newLine);
+    Console.print(curStatus(cars));
+
+    Console.print(newLine);
+  }
+
+  printWinner(winners) {
+    Console.print(OUTPUT.winners(winners));
   }
 }
 

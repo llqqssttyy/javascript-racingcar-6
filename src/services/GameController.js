@@ -29,6 +29,8 @@ class GameController {
 
       this.#outputView.printCurStatus(this.#gameModel.curStatus);
     }
+
+    this.#outputView.printWinner(this.#gameModel.winners);
   }
 }
 
