@@ -1,16 +1,16 @@
-import GameController from './services/GameController.js';
+import GameService from './services/GameService.js';
 
 class App {
-  #gameController;
+  #gameService;
 
   constructor() {
-    this.#gameController = new GameController();
+    this.#gameService = new GameService();
   }
 
   async play() {
-    await this.#gameController.init();
+    await this.#gameService.init();
 
-    this.#gameController.start();
+    this.#gameService.start();
   }
 }
 

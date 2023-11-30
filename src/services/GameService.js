@@ -2,7 +2,7 @@ import GameModel from '../domains/models/GameModel.js';
 import InputView from '../views/InputView.js';
 import OutputView from '../views/OutputView.js';
 
-class GameController {
+class GameService {
   #inputView;
 
   #outputView;
@@ -34,4 +34,4 @@ class GameController {
   }
 }
 
-export default GameController;
+export default GameService;

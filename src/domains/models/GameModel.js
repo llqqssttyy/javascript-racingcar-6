@@ -1,12 +1,14 @@
+import Car from './Car.js';
+
 import { ERROR } from '../../constants/messages.js';
 import throwError from '../../utils/throwError.js';
-import { isInvalidNumber } from '../validators/AttemptNumValidator.js';
+
 import {
   hasDuplicatedName,
   isInvalidCarNamesForm,
   isWhiteSpace,
 } from '../validators/CarValidator.js';
-import Car from './Car.js';
+import { isInvalidNumber } from '../validators/AttemptNumValidator.js';
 
 class GameModel {
   #carModels;
